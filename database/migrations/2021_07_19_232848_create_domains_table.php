@@ -15,6 +15,14 @@ class CreateDomainsTable extends Migration
     {
         Schema::create('domains', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('slug');
+            $table->foreignId('server_id')->constrained();
+            $table->string('domain');
+            $table->string('registrar')->nullable();
+            $table->boolean('managed')->nullable();
+            $table->date('expires')->nullable();
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
