@@ -28,7 +28,7 @@
                 <x-search-header/>
                 <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none">
                     <x-page-title-actions/>
-                    <x-pinned-projects/>
+{{--                    <x-pinned-projects/>--}}
                     {{ $slot }}
                 </main>
             </div>

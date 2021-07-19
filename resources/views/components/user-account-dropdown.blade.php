@@ -6,7 +6,7 @@
         <button
             @click="isOpen = !isOpen"
             type="button"
-            class="group w-full bg-gray-100 rounded-md px-3.5 py-2 text-sm text-left font-medium text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-purple-500" id="options-menu-button" aria-expanded="false" aria-haspopup="true">
+            class="group w-full bg-gray-100 rounded-md px-3.5 py-2 text-sm text-left font-medium text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-blue-500" id="options-menu-button" aria-expanded="false" aria-haspopup="true">
               <span class="flex w-full justify-between items-center">
                 <span class="flex min-w-0 items-center justify-between space-x-3">
                   <img class="w-10 h-10 bg-gray-300 rounded-full flex-shrink-0" src="{{ Auth::user()->profile_photo_url }}" alt="">
@@ -37,16 +37,19 @@
     >
         <div class="py-1" role="none">
             <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-0">View profile</a>
+            <a href="{{ route('profile.show') }}" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-0">Edit Account</a>
             <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-1">Settings</a>
-            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-2">Notifications</a>
         </div>
         <div class="py-1" role="none">
-            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-3">Get desktop app</a>
-            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-4">Support</a>
-        </div>
-        <div class="py-1" role="none">
-            <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="options-menu-item-5">Logout</a>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+
+                <x-jet-dropdown-link href="{{ route('logout') }}"
+                                     onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                    {{ __('Logout') }}
+                </x-jet-dropdown-link>
+            </form>
         </div>
     </div>
 </div>
