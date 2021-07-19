@@ -1,3 +1,3 @@
 <div>
-    test
+    This is the home page.
 </div>
