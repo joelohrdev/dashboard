@@ -40,6 +40,22 @@
                         </svg>
                         Domains
                     </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{ route('client.index') }}" :active="request()->routeIs('client.index')">
+                        <!-- Heroicon name: outline/clock -->
+                        <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+                        </svg>
+                        Clients
+                    </x-jet-nav-link>
+
+                    <x-jet-nav-link href="{{ route('contact.index') }}" :active="request()->routeIs('contact.index')">
+                        <!-- Heroicon name: outline/clock -->
+                        <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        Contacts
+                    </x-jet-nav-link>
                 </div>
                 <div class="mt-8">
                     <!-- Secondary navigation -->

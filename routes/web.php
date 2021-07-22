@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ServerController;
+use App\Models\Server;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +27,18 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/servers', function () {
     return view('server.index');
 })->name('server.index');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/servers/{server:slug}', [
+    ServerController::class, 'show'
+])->name('server.show');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/domains', function () {
     return view('domain.index');
 })->name('domain.index');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/clients', function () {
+    return view('client.index');
+})->name('client.index');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/contacts', function () {
+    return view('contact.index');
+})->name('contact.index');
