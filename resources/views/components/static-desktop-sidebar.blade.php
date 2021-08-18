@@ -8,7 +8,7 @@
             <!-- User account dropdown -->
             <x-user-account-dropdown/>
             <!-- Sidebar Search -->
-            <x-sidebar-search/>
+{{--            <x-sidebar-search/>--}}
             <!-- Navigation -->
             <nav class="px-3 mt-6">
                 <div class="space-y-1">
