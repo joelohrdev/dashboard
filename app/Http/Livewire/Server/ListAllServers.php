@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Server;
 
 use App\Models\Server;
 use Livewire\Component;
@@ -9,7 +9,7 @@ class ListAllServers extends Component
 {
     public function render()
     {
-        return view('livewire.list-all-servers', [
+        return view('livewire.server.list-all-servers', [
             'servers' => Server::all()
         ]);
     }

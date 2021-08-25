@@ -6,7 +6,9 @@
     </div>
     <div class="mt-4 flex sm:mt-0 sm:ml-4">
         @if(Request::route()->named('server.index'))
-            <livewire:add-server/>
+            <livewire:server.add-server/>
+        @elseif(Request::route()->named('server.show'))
+
         @endif
     </div>
 </div>

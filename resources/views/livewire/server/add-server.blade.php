@@ -16,12 +16,12 @@
         @click.away="isOpen = false"
         @keydown.escape.window="isOpen = false"
     >
-        <form wire.submit.prevent="createServer" method="POST" class="space-y-4 px-4 py-6">
+        <form wire:submit.prevent="createServer" class="space-y-4 px-4 py-6">
             <div>
-                <input wire.model.defer="name" type="text" class="w-full text-sm bg-gray-100 rounded placeholder-gray-900 border-none px-4 py-2"placeholder="Server Name">
+                <input wire:model.defer="name" type="text" class="w-full text-sm bg-gray-100 rounded placeholder-gray-900 border-none px-4 py-2"placeholder="Server Name">
             </div>
             <div>
-                <input wire.model.defer="ip_address" type="text" class="w-full text-sm bg-gray-100 rounded placeholder-gray-900 border-none px-4 py-2"placeholder="IP Address">
+                <input wire:model.defer="ip_address" type="text" class="w-full text-sm bg-gray-100 rounded placeholder-gray-900 border-none px-4 py-2"placeholder="IP Address">
             </div>
             <div>
                 <button
