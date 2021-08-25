@@ -2,9 +2,10 @@
 
 namespace App\Http\Livewire\Server;
 
+use App\Models\Server;
 use Livewire\Component;
 
-class DeleteServer extends Component
+class ShowServer extends Component
 {
     public $server;
 
@@ -16,10 +17,12 @@ class DeleteServer extends Component
     public function deleteServer()
     {
         Server::destroy($this->server->id);
+
+        return redirect()->route('server.index');
     }
 
     public function render()
     {
-        return view('livewire.server.delete-server');
+        return view('livewire.server.show-server');
     }
 }
