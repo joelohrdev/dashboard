@@ -22,4 +22,9 @@ class Server extends Model
     protected $fillable = [
         'name', 'slug', 'ip_address'
     ];
+
+    public function domains()
+    {
+        return $this->hasMany(Domain::class);
+    }
 }
