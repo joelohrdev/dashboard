@@ -48,7 +48,11 @@
                 <p class="text-red text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
-            <div>
+            <div class="flex justify-between">
+                <button
+                    x-on:click="isOpen = false"
+                    class="px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-gray-500 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:order-1 sm:ml-3"
+                >Cancel</button>
                 <button
                     type="submit"
                     class="px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:order-1 sm:ml-3"
